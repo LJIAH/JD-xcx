@@ -1,2 +1,27 @@
 <!--pages/category/index.wxml-->
-<text>pages/category/index.wxml</text>
+<view class="caregory">
+  <scroll-view class="nav_left" scroll-y>
+    <block wx:for="{{navLeftItems}}" wx:key="unique">
+      <view class="nav_left_items {{curIndex == index ? 'nav_left_item-active' : ''}}" data-index="{{index}}" bindtap="switchRightTab">
+        {{item}}
+      </view>
+    </block>
+  </scroll-view>
+  <scroll-view class="nav_right" scroll-y>
+    <view wx:if="{{navLeftItems[curIndex]}}">
+      <block wx:for="{{navRightItems[curIndex]}}" wx:for-item="item" wx:key="unique">
+        <view class="jd-category">
+          <view class="title">{{item.title}}</view>
+          <view class="jd-category-wrap">
+            <block wx:for="{{item.desc}}" wx:for-item="list" wx:key="unique"> 
+              <view class="jd-category-style" data-txt="{{list.text}}" bindtap="showListView">
+                <image class="list_img" src="{{list.img}}"></image>
+                <text class="list_text">{{list.text}}</text>
+              </view>
+            </block>
+          </view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</view>

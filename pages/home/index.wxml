@@ -14,6 +14,7 @@
 
   </view>
   <!-- 可滚动区域 -->
+  
   <scroll-view class='content-scroll' scroll-y='true' >
     <!-- 轮播图 -->
     <view class='indicator-wrap'>
