@@ -63,3 +63,11 @@
 .prolist_rate{
   margin-right: 10rpx;
 }
+.endview{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #999;
+}
